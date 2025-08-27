@@ -9,7 +9,7 @@ import matplotlib.dates as mdates
 st. set_page_config(layout="wide")
 
 # Load Data -> .csvs from load_databases.py
-df_raw = pd.read_csv('df_database.csv')
+df_raw = pd.read_csv('df_database_2025.csv')
     
 ## Sort based on category for plotting
 df_raw = df_raw.sort_values(by = 'CatID')
@@ -17,59 +17,62 @@ df_raw = df_raw.sort_values(by = 'CatID')
 dflt_strt = { 
     101: time(9,0),
     102: time(9,5),
-    202: time(10,35),
-    201: time(10,30),
-    203: time(10,40),
     103: time(9,10),
     104: time(9,15),
-    301: time(12,00),
+    201: time(10,30),
+    202: time(10,35),
+    203: time(10,40),
+    301: time(12,0),
     302: time(12,5),
     401: time(13,0),
-    521: time(14,0),
-    523: time(14,5),
-    511: time(14,10),
-    513: time(14,15),
-    422: time(13,0),
-    412: time(13,5),
+    402: time(13,5),
+    403: time(13,10),
+    501: time(14,0),
+    502: time(14,5),
+    503: time(14,10),
+    504: time(14,15),
     601: time(14,0),
     602: time(14,5),
-    701: time(15,0),
-    702: time(15,5),
-    703: time(15,10),
-    704: time(15,15),
-    801: time(16,0),
-    802: time(16,5),
-    803: time(16,10),
-    804: time(16,15)
+    603: time(14,10),
+    701: time(14,50),
+    702: time(14,55),
+    703: time(15,0),
+    801: time(15,40),
+    802: time(15,45),
+    803: time(15,50),
+    804: time(15,55),
+    805: time(16,0)
     }
 
 cat_names = {
     101: 'Varsity Male',
     102: 'Varsity Female',
-    202: 'Junior Varsity 11-12th Grade Male',
-    201: 'Junior Varsity 9-10th Grade Male',
-    203: 'Junior Varsity Female',
     103: 'Advanced Middle School Male',
     104: 'Advanced Middle School Female',
+    201: 'Junior Varsity 9-10th Grade Male',
+    202: 'Junior Varsity 11-12th Grade Male',
+    203: 'Junior Varsity Female',
     301: 'Novice 10-12th Grade Male',
     302: 'Novice 9th Grade Male',
     401: 'Novice 9-12th Grade Female',
+    402: 'Intermediate 6-8th Grade Female',
+    403: 'Novice 6-8th Grade Female',
+    501: 'Intermediate 7-8th Grade Male',
+    502: 'Intermediate 6th Grade Male',
+    503: 'Novice 7-8th Grade Male',
+    504: 'Novice 6th Grade Male',
     601: 'Advanced Elementary Male',
-    602: 'Advanced Elementary Female',
-    701: 'Elementary 5th Grade Male',
+    602: 'Elementary 5th Grade Male',
+    603: 'Elementary 4th Grade Male',
+    701: 'Advanced Elementary Female',
     702: 'Elementary 5th Grade Female',
-    703: 'Elementary 4th Grade Male',
-    704: 'Elementary 4th Grade Female',
-    801: 'Elementary 2nd-3rd Grade Male',
-    802: 'Elementary 2nd-3rd Grade Female',
-    803: 'Elementary PreK-1st Grade Male',
-    804: 'Elementary PreK-1st Grade Female',
-    511: 'Intermediate 7-8th Grade Male',
-    513: 'Intermediate 6th Grade Male',
-    412: 'Intermediate 6-8th Grade Female',
-    521: 'Novice 7-8th Grade Male',
-    523: 'Novice 6th Grade Male',
-    422: 'Novice 6-8th Grade Female'
+    703: 'Elementary 4th Grade Female',
+    801: 'Elementary 3rd Grade Male',
+    802: 'Elementary 2nd Grade Male;,x
+    803: 'Elementary 2nd-3rd Grade Female',
+    804: 'Elementary PreK-1st Grade Male',
+    805: 'Elementary PreK-1st Grade Female'
+
     }
 
 min_sat = time(14,0)
@@ -78,8 +81,8 @@ min_sun = time(9,0)
 max_sat = time(18,0)
 max_sun = time(17,0)
 
-sat_cats = [601, 602, 701, 702, 703, 704, 801, 802, 803, 804]
-sun_cats = [101, 102, 202, 201, 203, 103, 104 ,301, 302, 401, 511, 513, 412, 521, 523, 422]
+sat_cats = [601, 602, 603, 701, 702, 703, 801, 802, 803, 804, 805]
+sun_cats = [101, 102, 103, 104, 201, 202, 203, 301, 302, 401, 402, 403, 501, 502, 503, 504]
 
 dflt_step = timedelta(minutes=5)
 
@@ -163,4 +166,5 @@ plt.xlabel('Time')
 plt.xticks(rotation=85)
 plt.grid()
 st.pyplot(fig, use_container_width=True)
+
 plt.show()
