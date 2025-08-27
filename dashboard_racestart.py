@@ -68,7 +68,7 @@ cat_names = {
     702: 'Elementary 5th Grade Female',
     703: 'Elementary 4th Grade Female',
     801: 'Elementary 3rd Grade Male',
-    802: 'Elementary 2nd Grade Male;,x
+    802: 'Elementary 2nd Grade Male',
     803: 'Elementary 2nd-3rd Grade Female',
     804: 'Elementary PreK-1st Grade Male',
     805: 'Elementary PreK-1st Grade Female'
@@ -168,3 +168,4 @@ plt.grid()
 st.pyplot(fig, use_container_width=True)
 
 plt.show()
+
