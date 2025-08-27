@@ -128,7 +128,7 @@ while r < df_raw.shape[0]:
     elif catid in [402]:
         catid = 422
         df_raw.loc[r,'CatID'] = catid
-    strt_row = strt.loc[strt['CatID']] == catid.index[0]
+    strt_row = strt.loc[strt['CatID'] == catid].index[0]
     n = 1
     while n <= 3:
         if not np.isnan(df_raw.loc[r, 'Lap' + str(n)]):
@@ -168,6 +168,7 @@ plt.grid()
 st.pyplot(fig, use_container_width=True)
 
 plt.show()
+
 
 
 
