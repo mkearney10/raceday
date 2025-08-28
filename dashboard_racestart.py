@@ -72,7 +72,6 @@ cat_names = {
     803: 'Elementary 2nd-3rd Grade Female',
     804: 'Elementary PreK-1st Grade Male',
     805: 'Elementary PreK-1st Grade Female'
-
     }
 
 min_sat = time(14,0)
@@ -168,6 +167,7 @@ plt.grid()
 st.pyplot(fig, use_container_width=True)
 
 plt.show()
+
 
 
 
