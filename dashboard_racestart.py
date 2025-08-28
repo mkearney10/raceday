@@ -118,15 +118,6 @@ df = df_raw[['RegID','CatID','Cat','Venue']]
 r = 0
 while r < df_raw.shape[0]:
     catid = df_raw.loc[r,'CatID']
-    if catid in [501, 502]:
-        catid = 521
-        df_raw.loc[r,'CatID'] = catid
-    elif catid in [503]:
-        catid = 523
-        df_raw.loc[r,'CatID'] = catid
-    elif catid in [402]:
-        catid = 422
-        df_raw.loc[r,'CatID'] = catid
     strt_row = strt.loc[strt['CatID'] == catid].index[0]
     n = 1
     while n <= 3:
@@ -167,6 +158,7 @@ plt.grid()
 st.pyplot(fig, use_container_width=True)
 
 plt.show()
+
 
 
 
